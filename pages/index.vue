@@ -18,10 +18,10 @@
 					</div>
 
 					<ul class="list-none my-10 mx-0 p-0 overflow-hidden">
-						<li class="float-right block text-center font-bold text-rose-500 mx-2 py-5 px-10 no-underline bg-[url('/image3.jpg')] bg-no-repeat">Knick Knacks</li>
-						<li class="float-right block text-center font-bold text-sky-600 mx-2 py-5 px-8 no-underline bg-[url('/image2.jpg')] bg-no-repeat">Clothing & Gear</li>
-						<li class="float-right block text-center font-bold text-amber-500 mx-2 py-5 px-5 no-underline bg-[url('/image1.jpg')] bg-no-repeat">Sports & Activities</li>
-						<li class="float-right block text-center font-bold text-sky-600 mx-2 py-5 px-7 no-underline bg-[url('/image0.jpg')] bg-no-repeat" >Books & Comics</li>
+						<li class="float-right block mx-2 py-5 px-10 no-underline bg-[url('/image3.jpg')] bg-no-repeat hover:scale-105"><NuxtLink to="/knickknacks" class="text-center font-bold text-rose-500">Knick Knacks</NuxtLink></li>
+						<li class="float-right block mx-2 py-5 px-8 no-underline bg-[url('/image2.jpg')] bg-no-repeat hover:scale-105"><NuxtLink to="/clothingandgear" class="text-center font-bold text-sky-600">Clothing & Gear</NuxtLink></li>
+						<li class="float-right block mx-2 py-5 px-5 no-underline bg-[url('/image1.jpg')] bg-no-repeat hover:scale-105"><NuxtLink to="/sportsandactivities" class="text-center font-bold text-amber-500">Sports & Activities</NuxtLink></li>
+						<li class="float-right block mx-2 py-5 px-7 no-underline bg-[url('/image0.jpg')] bg-no-repeat hover:scale-105"><NuxtLink to="/booksandcomics" class="text-center font-bold text-sky-600">Books & Comics</NuxtLink></li>
 					</ul>
 
 					<ul class="list-none my-10 mx-0 p-0 overflow-hidden">
@@ -36,7 +36,8 @@
 						<p class="mx-10 float-left bg-[url('/image_bg1.jpg')] bg-contain bg-no-repeat p-5 text-cyan-400">
 						SUBSCRIBE to ExTant's <br> BUMPIN' HOT newsletter to <br> get notified of our radical <br> sales, discounts and new <br> products EARLY! <br><br> - ExTant site news and updates <br> ##/##/#### We at ExTant are <br> very sorry to inform our loyal <br> customers that our EShopping <br> website and business will be <br> indefinitely closed. <br><br> Thank you for using our se...
 						</p>
-						<img src="/image4.jpg" class="float-right -mx-10">
+						<NuxtLink to="/foog" class="float-right mx-10"><img src="/image4.jpg"></NuxtLink>
+						
 					</div>
 
 					<p class="text-center">Click here for more information of ExTant <br> inc. customer support, business line.</p>
