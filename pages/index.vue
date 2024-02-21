@@ -4,24 +4,24 @@
 
 		<div id="middle" class="col-span-5 h-fit bg-[url('/Extant_background.jpg')]">
 			<div class="relative m-auto w-full">
-				<img src="/Extant_logo.jpg" width="200" class="absolute">
+				<img src="/Extant_logo.jpg" width="175" class="absolute">
 				<div class="self-center mx-auto w-5/6 h-5/6 bg-white">
-					<p class="text-center text-red-700 m-5">SITE NOTICE ##/##/####. ExTant Services are indefinitely dicontinued.</p>
+					<p class="text-center text-red-700 pt-10">SITE NOTICE ##/##/####. ExTant Services are indefinitely discontinued.</p>
 
 					<div class="grid grid-cols-5 my-10">
 						<div class="col-span-1"></div>
-						<h1 class="col-span-2 text-center text-2xl"> Against All Odds!</h1>
-						<form action="" class="col-span-2">
-							<input type="text" placeholder="Search..." class="border-solid border-2 border-black"></input>
+						<h1 class="col-span-2 text-center font-serif font-bold text-amber-500 text-3xl"> Against All Odds!</h1>
+						<form action="" class="col-span-2 m-auto">
+							<input type="text" placeholder="Search..." class="border-solid border-2 border-black mx-5"></input>
 							<input type="submit" value="Search">
 						</form>
 					</div>
 
 					<ul class="list-none my-10 mx-0 p-0 overflow-hidden">
-						<li class="float-right block text-center mx-2 py-5 px-10 no-underline bg-[url('/image3.jpg')]">Knick Knacks</li>
-						<li class="float-right block text-center mx-2 py-5 px-8 no-underline bg-[url('/image2.jpg')]">Clothing & Gear</li>
-						<li class="float-right block text-center mx-2 py-5 px-5 no-underline bg-[url('/image1.jpg')]">Sports & Activities</li>
-						<li class="float-right block text-center mx-2 py-5 px-7 no-underline bg-[url('/image0.jpg')]" >Books & Comics</li>
+						<li class="float-right block text-center font-bold text-rose-500 mx-2 py-5 px-10 no-underline bg-[url('/image3.jpg')] bg-no-repeat">Knick Knacks</li>
+						<li class="float-right block text-center font-bold text-sky-600 mx-2 py-5 px-8 no-underline bg-[url('/image2.jpg')] bg-no-repeat">Clothing & Gear</li>
+						<li class="float-right block text-center font-bold text-amber-500 mx-2 py-5 px-5 no-underline bg-[url('/image1.jpg')] bg-no-repeat">Sports & Activities</li>
+						<li class="float-right block text-center font-bold text-sky-600 mx-2 py-5 px-7 no-underline bg-[url('/image0.jpg')] bg-no-repeat" >Books & Comics</li>
 					</ul>
 
 					<ul class="list-none my-10 mx-0 p-0 overflow-hidden">
