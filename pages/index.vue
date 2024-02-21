@@ -3,8 +3,8 @@
 		<div class="border-black border-solid border-2 col-span-1"></div>
 
 		<div id="middle" class="col-span-5 h-fit bg-[url('/Extant_background.jpg')]">
-			<div class="relative m-auto w-full">
-				<img src="/Extant_logo.jpg" width="175" class="absolute">
+			<div class="relative mx-auto my-10 w-full">
+				<img src="/Extant_logo.jpg" width="175" class="absolute -my-10">
 				<div class="self-center mx-auto w-5/6 h-5/6 bg-white">
 					<p class="text-center text-red-700 pt-10">SITE NOTICE ##/##/####. ExTant Services are indefinitely discontinued.</p>
 
