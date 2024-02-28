@@ -1,6 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true,
+
+    timeline: {
+      enabled: true,
+    },
+  },
   css: ['~/assets/css/main.css'],
   postcss: {
     plugins: {
@@ -8,5 +14,8 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["nuxt-vercel-analytics"],	  
+  modules: ["nuxt-vercel-analytics", "@formkit/nuxt",],
+  formkit: {
+    autoImport: true
+  },
 })

@@ -51,12 +51,12 @@ useHead({
 						</p>
 
 						<!-- middle ad -->
-						<NuxtLink to="/foog" class="float-right mx-10"><img src="/image4.jpg"></NuxtLink>
+						<a href="/foog" class="float-right mx-10"><img src="/image4.jpg"></a>
 						
 					</div>
 
 					<!-- bottom notice -->
-					<NuxtLink to="/information" class="text-center">Click here for more information of ExTant <br> inc. customer support, business line.</NuxtLink>
+					<a href="/terminal" class="text-center">Click here for more information of ExTant <br> inc. customer support, business line.</a>
 				</div>
 			</div>
 		</div>
