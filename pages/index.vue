@@ -22,7 +22,7 @@ useHead({
 						<div class="col-span-1"></div>
 						<h1 class="col-span-2 text-center font-serif font-bold text-amber-500 text-3xl"> Against All Odds!</h1>
 						<form action="" class="col-span-2 m-auto">
-							<input type="text" placeholder="Search..." class="border-solid border-2 border-black mx-5"></input>
+							<input type="text" placeholder="Search..." class="border-solid border-2 border-black mx-5">
 							<input type="submit" value="Search">
 						</form>
 					</div>
@@ -52,7 +52,7 @@ useHead({
 
 						<!-- middle ad -->
 						<a href="/foog" class="float-right mx-10"><img src="/image4.jpg"></a>
-						
+
 					</div>
 
 					<!-- bottom notice -->

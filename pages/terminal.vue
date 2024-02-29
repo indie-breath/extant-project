@@ -27,10 +27,10 @@
 <template>
   <div id="main">
     <div id="terminal_output">{{ formOutput }}</div>
-      
+
     <form id="terminal" @submit.prevent="submitForm">
-      <input type="text" v-model="formInput" name="input" id="terminal_input"></input>
-      <input type="submit" id="terminal_submit" value="Enter"></input>
+      <input type="text" v-model="formInput" name="input" id="terminal_input">
+      <input type="submit" id="terminal_submit" value="Enter">
     </form>
   </div>
 </template>

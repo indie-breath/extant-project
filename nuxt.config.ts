@@ -1,21 +1,14 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
-export default defineNuxtConfig({
-  devtools: {
-    enabled: true,
+import { setAbsoluteSqliteDatabaseUrlForPrisma } from './prisma/utils'
 
-    timeline: {
-      enabled: true,
-    },
+setAbsoluteSqliteDatabaseUrlForPrisma()
+
+export default defineNuxtConfig({
+  runtimeConfig: {
+    version: '0.0.1'
   },
-  css: ['~/assets/css/main.css'],
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
-  },
-  modules: ["nuxt-vercel-analytics", "@formkit/nuxt",],
-  formkit: {
-    autoImport: true
-  },
+  modules: ['@nuxtjs/tailwindcss', 'nuxt-svgo', '@huntersofbook/naive-ui-nuxt'],
+  extends: ['@sidebase/core'],
+  typescript: {
+    shim: false
+  }
 })
