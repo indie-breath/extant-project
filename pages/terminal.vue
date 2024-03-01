@@ -7,7 +7,7 @@
 
   const submitForm = async () => {
     console.log("Got to submit " + JSON.stringify(formInput) + " ... " + formInput._value);
-    const { data: response } = await $fetch("/api/terminal_handler", {
+    const { data: response } = await $fetch("/api/terminal", {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
@@ -19,14 +19,14 @@
 
     if (response) {
       //TODO: figure out how to newline this shit
-      formOutput.value = formOutput.value + response;
+      formOutput.value = formOutput.value + response.firstName + " " + response.lastName + "\r\n";
     }
   }
 </script>
 
 <template>
   <div id="main">
-    <div id="terminal_output">{{ formOutput }}</div>
+    <textarea name="output" id="terminal_output" cols="100" rows="25">{{ formOutput }}</textarea>
 
     <form id="terminal" @submit.prevent="submitForm">
       <input type="text" v-model="formInput" name="input" id="terminal_input">
