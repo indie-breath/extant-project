@@ -19,7 +19,7 @@
 
     if (response) {
       //TODO: figure out how to newline this shit
-      formOutput.value = formOutput.value + response.firstName + " " + response.lastName + "\r\n";
+      formOutput.value = formOutput.value + response + "\r\n";
     }
   }
 </script>

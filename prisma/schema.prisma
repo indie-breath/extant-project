@@ -12,3 +12,8 @@ model Employees {
   firstName String
   lastName  String
 }
+
+model Commands {
+  commandId String  @id @unique
+  output    String
+}
