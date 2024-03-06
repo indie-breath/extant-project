@@ -19,7 +19,7 @@ useHead({
 					<p id="site-notice">SITE NOTICE ##/##/####. ExTant Services are indefinitely discontinued.</p>
 
 					<div id="search-panel">
-						<div class="col-span-1"></div>
+						<div></div>
 						<h1 id="title"> Against All Odds!</h1>
 						<form id="search-form" action="">
 							<input id="search-form-input" type="text" placeholder="Search...">
@@ -68,7 +68,7 @@ useHead({
 	</div>
 </template>
 
-<style>
+<style lang="postcss">
 #full {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
@@ -101,7 +101,6 @@ useHead({
 }
 
 #inner-panel {
-  align-self: center;
   margin: auto;
   width: 83%;
   height: 83%;

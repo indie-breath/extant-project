@@ -1,7 +1,6 @@
 <script setup lang="ts">
   import { ref } from 'vue';
 
-  const isApiRespond = ref(false);
   const formInput = ref('');
   const formOutput = ref('');
 
@@ -29,13 +28,12 @@
 
     <form id="terminal" @submit.prevent="submitForm">
       <p>></p>
-      <input type="text" v-model="formInput" name="input" id="terminal_input">
-      <input type="submit" id="terminal_submit" value="Enter">
+      <input type="text" v-model="formInput" name="input" id="terminal_input" autocomplete="off">
     </form>
   </div>
 </template>
 
-<style land="postcss">
+<style lang="postcss">
 :root {
   --text_color: rgb(34, 180, 85);
 }
@@ -46,10 +44,11 @@
 }
 
 #terminal {
+  padding-top: 10px;
   padding-left: 20px;
   padding-right: 20px;
   background-color: black;
-  border-color: rgb(32, 72, 41);
+  border-color: var(--text_color);
   border-width: 2px;
   border-top-style: solid;
   border-bottom-style: none;
@@ -58,6 +57,7 @@
 }
 
 #terminal_input {
+  width: 90%;
   padding-left: 10px;
   background-color: black;
   outline: none;
