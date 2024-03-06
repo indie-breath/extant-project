@@ -17,7 +17,7 @@
     })
 
     if (response) {
-      formOutput.value = formOutput.value + response + "\r\n";
+      formOutput.value = formOutput.value + "root@extant-project:~ >> " + response + "\r\n";
       formInput.value = "";
     }
   }
@@ -25,31 +25,64 @@
 
 <template>
   <div id="main">
-    <textarea name="output" id="terminal_output" cols="100" rows="25">{{ formOutput }}</textarea>
+    <textarea name="output" id="terminal_output" readonly>{{ formOutput }}</textarea>
 
     <form id="terminal" @submit.prevent="submitForm">
+      <p>></p>
       <input type="text" v-model="formInput" name="input" id="terminal_input">
       <input type="submit" id="terminal_submit" value="Enter">
     </form>
   </div>
 </template>
 
-<style>
+<style land="postcss">
+:root {
+  --text_color: rgb(34, 180, 85);
+}
+
+#main {
+  background-color: black;
+  height: 100vh;
+}
+
 #terminal {
-  border-style: solid;
-  border-color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: black;
+  border-color: rgb(32, 72, 41);
   border-width: 2px;
+  border-top-style: solid;
+  border-bottom-style: none;
+  border-left-style: none;
+  border-right-style: none;
 }
 
 #terminal_input {
-  border-style: solid;
-  border-color: black;
-  border-width: 2px;
+  padding-left: 10px;
+  background-color: black;
+  outline: none;
+  color: var(--text_color);
 }
 
 #terminal_output {
-  border-style: solid;
-  border-color: black;
-  border-width: 2px;
+  height: 90%;
+  width: 100%;
+  padding-top: 20px;
+  padding-left: 30px;
+  background-color: black;
+  outline: none;
+  color: var(--text_color);
+  resize: none;
+}
+
+#terminal_submit {
+  color: var(--text_color);
+  outline: none;
+}
+
+p {
+  padding-left: 20px;
+  color: var(--text_color);
+  float: left;
 }
 </style>
