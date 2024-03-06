@@ -6,7 +6,6 @@
   const formOutput = ref('');
 
   const submitForm = async () => {
-    console.log("Got to submit " + JSON.stringify(formInput) + " ... " + formInput._value);
     const { data: response } = await $fetch("/api/terminal", {
       method: 'post',
       headers: {
@@ -18,8 +17,8 @@
     })
 
     if (response) {
-      //TODO: figure out how to newline this shit
       formOutput.value = formOutput.value + response + "\r\n";
+      formInput.value = "";
     }
   }
 </script>
