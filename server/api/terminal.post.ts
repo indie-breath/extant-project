@@ -4,21 +4,23 @@ import { PrismaClient } from '@prisma/client';
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
   const prisma = new PrismaClient();
+  let output:string;
 
-  /*const createCommand = await prisma.commands.create({
-    data: {
-      commandId: "help",
-      output: "You have asked for help.",
+  if(body.input == "findemployee") {
+    if(body.input.includes("-fn")) {
     }
-  })*/
-
-  const command = await prisma.commands.findUnique({
-    where: {
-      commandId: body.input,
+    else {
+      const employees = await prisma.employees.findMany();
+      for(let x = 0; x < employees.length; x++) {
+        if (!output) {
+          output = "Employee ID: " + employees[x].id + " | Employee Name: " + employees[x].firstName + " " + employees[x].lastName;
+        }
+        else {
+          output = output + " ||| " + "Employee ID: " + employees[x].id + " | Employee Name: " + employees[x].firstName + " " + employees[x].lastName + " ||| ";
+        }
+      }
     }
-  })
-
-  const output = command.output;
+  }
 
   return {
     data: output,
