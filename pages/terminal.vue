@@ -1,6 +1,10 @@
 <script setup lang="ts">
   import { ref } from 'vue';
 
+  useHead({
+    title: "Extant - Terminal",
+  });
+
   const formInput = ref('');
   const formOutput = ref('');
 
@@ -18,6 +22,9 @@
     if (response == "clear") {
       formOutput.value = "";
       formInput.value = "";
+    }
+    if (response == "return") {
+      navigateTo("/");
     }
     else if (response) {
       formOutput.value = formOutput.value + "root@extant-project:~ >> " + response.toString() + "\r\n";
