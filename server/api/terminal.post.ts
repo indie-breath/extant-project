@@ -4,21 +4,58 @@ import { PrismaClient } from '@prisma/client';
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
   const prisma = new PrismaClient();
+  let output:string;
 
-  /*const createCommand = await prisma.commands.create({
-    data: {
-      commandId: "help",
-      output: "You have asked for help.",
+  if(body.input.includes("findemployee")) {
+    if(body.input.includes("-fn")) {
+      let options = body.input.split("=");
+      options = options[1];
+      options = options.replace("\"", "");
+      options = options.replace("\"", "");
+
+      const employees = await prisma.employees.findFirst({
+        where: {
+          firstName: {
+            equals: options,
+            mode: "insensitive",
+          },
+        }
+      })
+
+      output = "Employee ID: " + employees.id + " | Employee Name: " + employees.firstName + " " + employees.lastName;
     }
-  })*/
+    else if(body.input.includes("-ln")) {
+      let options = body.input.split("=");
+      options = options[1];
+      options = options.replace("\"", "");
+      options = options.replace("\"", "");
 
-  const command = await prisma.commands.findUnique({
-    where: {
-      commandId: body.input,
+      const employees = await prisma.employees.findFirst({
+        where: {
+          lastName: {
+            equals: options,
+            mode: "insensitive",
+          },
+        }
+      })
+
+      output = "Employee ID: " + employees.id + " | Employee Name: " + employees.firstName + " " + employees.lastName;
     }
-  })
-
-  const output = command.output;
+    else {
+      const employees = await prisma.employees.findMany();
+      for(let x = 0; x < employees.length; x++) {
+        if (!output) {
+          output = "Employee ID: " + employees[x].id + " | Employee Name: " + employees[x].firstName + " " + employees[x].lastName;
+        }
+        else {
+          output = output + " ||| " + "Employee ID: " + employees[x].id + " | Employee Name: " + employees[x].firstName + " " + employees[x].lastName + " ||| ";
+        }
+      }
+    }
+  }
+  else {
+    output = "Invalid Command"
+  }
 
   return {
     data: output,

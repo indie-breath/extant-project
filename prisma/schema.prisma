@@ -14,6 +14,8 @@ model Employees {
 }
 
 model Commands {
-  commandId String  @id @unique
-  output    String
+  commandId   String  @id @unique
+  options     String
+  output      String
+  description String
 }
