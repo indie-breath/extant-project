@@ -7,12 +7,13 @@ useHead({
 <template>
 	<div id="full">
 		<!-- left panel for ads -->
-		<div id="left-panel"></div>
+		<div id="left-panel">
+    </div>
 
 		<!-- middle panel for main content -->
 		<div id="middle-panel">
 			<div id="outer-panel">
-				<img id="logo" src="/Extant_logo.jpg" width="175">
+				<img id="logo" src="/Extant_logo-1.png" width="175">
 
 				<!-- top text and website search function -->
 				<div id="inner-panel">
@@ -29,10 +30,10 @@ useHead({
 
 					<!-- navbar -->
 					<ul id="navbar">
-						<li id="navbar-knicknacks" class="navbar-item"><a href="/knickknacks" class="text-center font-bold text-rose-500">Knick Knacks</a></li>
-						<li id="navbar-clothingandgear" class="navbar-item"><a href="/clothingandgear" class="text-center font-bold text-sky-600">Clothing & Gear</a></li>
-						<li id="navbar-sportsandactivities" class="navbar-item"><a href="/sportsandactivities" class="text-center font-bold text-amber-500">Sports & Activities</a></li>
-						<li id="navbar-booksandcomics" class="navbar-item"><a href="/booksandcomics" class="text-center font-bold text-sky-600">Books & Comics</a></li>
+						<li id="navbar-knicknacks" class="navbar-item"><a href="/knickknacks">Knick Knacks</a></li>
+						<li id="navbar-clothingandgear" class="navbar-item"><a href="/clothingandgear">Clothing & Gear</a></li>
+						<li id="navbar-sportsandactivities" class="navbar-item"><a href="/sportsandactivities">Sports & Activities</a></li>
+						<li id="navbar-booksandcomics" class="navbar-item"><a href="/booksandcomics">Books & Comics</a></li>
 					</ul>
 
 					<!-- the boxes for decoration -->
@@ -62,8 +63,7 @@ useHead({
 		</div>
 
 		<!-- right panel for ads -->
-		<div class="border-black border-solid border-2 col-span-1">
-			<img src="/Extant_Tasc_2.png" class="mr-auto">
+		<div id="right-panel">
 		</div>
 	</div>
 </template>
@@ -72,12 +72,6 @@ useHead({
 #full {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
-}
-
-#left-panel {
-  border-color: black;
-  border-style: solid;
-  border-width: 2px;
 }
 
 #middle-panel {
@@ -158,8 +152,16 @@ useHead({
   padding-top: 15px;
 }
 
+#navbar-knicknacks a {
+  color: rgb(244 63 94);
+}
+
 #navbar-clothingandgear {
   background-image: url('/image2.jpg');
+}
+
+#navbar-clothingandgear a {
+  color: rgb(14 165 233);
 }
 
 #navbar-sportsandactivities {
@@ -167,8 +169,16 @@ useHead({
   padding-left: 12px !important;
 }
 
+#navbar-sportsandactivities a {
+	color: rgb(245 158 11);
+}
+
 #navbar-booksandcomics {
   background-image: url('/image0.jpg');
+}
+
+#navbar-booksandcomics a {
+  color: rgb(14 165 233);
 }
 
 .navbar-item {
@@ -187,6 +197,11 @@ useHead({
 
 .navbar-item:hover {
   transform: scale(1.05);
+}
+
+.navbar-item a {
+  text-align: center;
+  font-weight: bold;
 }
 
 #decoration-list {
