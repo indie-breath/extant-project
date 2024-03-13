@@ -1,10 +1,14 @@
 import { defineEventHandler, readBody } from "h3";
 import { PrismaClient } from '@prisma/client';
 
+const help = [
+  "findemployee command structure: \n  findemployee \n  findemployee -fn=\"<firstName>\" \n  findemployee -ln=\"<lastName>\""
+];
+
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
   const prisma = new PrismaClient();
-  let output:string;
+  let output = body.input + "\n";
 
   if(body.input.includes("findemployee")) {
     if(body.input.includes("-fn")) {
@@ -22,7 +26,7 @@ export default defineEventHandler(async (event) => {
         }
       })
 
-      output = "Employee ID: " + employees.id + " | Employee Name: " + employees.firstName + " " + employees.lastName;
+      output = output + "Employee ID: " + employees.id + " | Employee Name: " + employees.firstName + " " + employees.lastName;
     }
     else if(body.input.includes("-ln")) {
       let options = body.input.split("=");
@@ -39,24 +43,29 @@ export default defineEventHandler(async (event) => {
         }
       })
 
-      output = "Employee ID: " + employees.id + " | Employee Name: " + employees.firstName + " " + employees.lastName;
+      output = output + "Employee ID: " + employees.id + " | Employee Name: " + employees.firstName + " " + employees.lastName;
     }
     else if(body.input == "findemployee") {
-      output = "Extant Employees:\n";
+      output = output + "Extant Employees:\n";
       const employees = await prisma.employees.findMany();
       for(let x = 0; x < employees.length; x++) {
-        output = output + "Employee ID: " + employees[x].id + " | Employee Name: " + employees[x].firstName + " " + employees[x].lastName + "\n";
+        output = output + " Employee ID: " + employees[x].id + " | Employee Name: " + employees[x].firstName + " " + employees[x].lastName + "\n";
       }
     }
     else {
-      output = "findemployee command structure: \n findemployee \n findemployee -fn=\"<firstName>\" \n findemployee -ln=\"<lastName>\"";
+      output = output + help[0];
+    }
+  }
+  else if(body.input.includes("help")) {
+    for(let i = 0; i < help.length; i++) {
+      output = output + help[i] + "\n";
     }
   }
   else if(body.input.includes("clear")) {
     output = "clear";
   }
   else {
-    output = "Invalid Command"
+    output = output + "Invalid Command"
   }
 
   return {
