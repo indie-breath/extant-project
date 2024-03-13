@@ -15,7 +15,11 @@
       },
     })
 
-    if (response) {
+    if (response == "clear") {
+      formOutput.value = "";
+      formInput.value = "";
+    }
+    else if (response) {
       formOutput.value = formOutput.value + "root@extant-project:~ >> " + response.toString() + "\r\n";
       formInput.value = "";
     }
