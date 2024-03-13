@@ -17,6 +17,24 @@ export default defineEventHandler(async (event) => {
         where: {
           firstName: {
             equals: options,
+            mode: "insensitive",
+          },
+        }
+      })
+
+      output = "Employee ID: " + employees.id + " | Employee Name: " + employees.firstName + " " + employees.lastName;
+    }
+    else if(body.input.includes("-ln")) {
+      let options = body.input.split("=");
+      options = options[1];
+      options = options.replace("\"", "");
+      options = options.replace("\"", "");
+
+      const employees = await prisma.employees.findFirst({
+        where: {
+          lastName: {
+            equals: options,
+            mode: "insensitive",
           },
         }
       })
