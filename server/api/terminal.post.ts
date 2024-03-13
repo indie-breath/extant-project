@@ -6,8 +6,22 @@ export default defineEventHandler(async (event) => {
   const prisma = new PrismaClient();
   let output:string;
 
-  if(body.input == "findemployee") {
+  if(body.input.includes("findemployee")) {
     if(body.input.includes("-fn")) {
+      let options = body.input.split("=");
+      options = options[1];
+      options = options.replace("\"", "");
+      options = options.replace("\"", "");
+
+      const employees = await prisma.employees.findFirst({
+        where: {
+          firstName: {
+            equals: options,
+          },
+        }
+      })
+
+      output = "Employee ID: " + employees.id + " | Employee Name: " + employees.firstName + " " + employees.lastName;
     }
     else {
       const employees = await prisma.employees.findMany();
