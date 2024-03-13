@@ -41,6 +41,7 @@
 #main {
   background-color: black;
   height: 100vh;
+  font-family: "Courier New";
 }
 
 #terminal {

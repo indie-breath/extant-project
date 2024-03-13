@@ -53,6 +53,9 @@ export default defineEventHandler(async (event) => {
       }
     }
   }
+  else {
+    output = "Invalid Command"
+  }
 
   return {
     data: output,
